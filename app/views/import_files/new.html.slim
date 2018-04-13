@@ -1,0 +1,10 @@
+.container
+  .col-sm-12
+    h1 Selecione o arquivo que deseja importar
+    = form_for :file_import, url: import_files_path do |f|
+      = f.label :file, 'Arquivo'
+      = f.file_field :file
+      = f.submit 'Importar'
+
+    - if @gross_revenue.present?
+      p.total-value A receita bruta total é de R$ #{'%.2f' %  @gross_revenue}
