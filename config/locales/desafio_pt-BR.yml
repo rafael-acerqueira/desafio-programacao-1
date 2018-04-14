@@ -1,0 +1,6 @@
+pt-BR:
+  logout: Sair
+  activerecord:
+    attributes:
+      user:
+        name: Nome

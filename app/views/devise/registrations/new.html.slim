@@ -5,6 +5,10 @@ h2.text-center= I18n.t("devise.registrations.new.sign_up")
   = devise_error_messages!
 
   .field
+    = f.label :name
+    = f.text_field :name, autofocus: true, autocomplete: "name", class: 'input-field'
+
+  .field
     = f.label :email
     = f.email_field :email, autofocus: true, autocomplete: "email", class: 'input-field'
 
@@ -12,7 +16,8 @@ h2.text-center= I18n.t("devise.registrations.new.sign_up")
     = f.label :password
     = f.password_field :password, autocomplete: "off", class: 'input-field'
     - if @minimum_password_length
-      em #{@minimum_password_length} caracteres no mínimo
+      em
+        |(#{@minimum_password_length} caracteres no mínimo)
 
 
   .field
